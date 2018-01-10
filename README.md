@@ -120,8 +120,10 @@ translate($tran,"EN","zh-CHS");
 #### 欣赏几张图
 #####正常查询
 ![cmd-markdown-logo](1正常刷新.PNG)
+#
 #####防止恶意查询
 ![cmd-markdown-logo](2恶意刷新.PNG)
+#
 #####查询结果图
 ![cmd-markdown-logo](3将查询词显示在页面上.PNG)
 
