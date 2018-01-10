@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title>解析请求url中的Json</title>
+		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js" ></script>
+	</head>
+	<body>
+		
+		<div class="q-info"></div>
+		<div class="tran-info"></div>
+		<hr />
+		<div class="exp-info"><h4>基本解释：</h4></div>
+		<div class="web-info"><h4>网络解释：</h4></div>
+		
+		<script>
+			
+			var tran_url = "test.json";//json的网络地址
+			
+			$.getJSON(tran_url, function(dataObj, status){
+                //console.log(status);
+				//必选
+				$(".q-info").append("<h4>查询词："+dataObj.query+"</h4>");
+				//必选
+				for (m=0;m<dataObj.translation.length;m++) {
+					$(".tran-info").append("<div>"+dataObj.translation[m]+"</div>");
+				}
+				//非必
+				if(typeof(dataObj.basic) === "undefined"){
+					console.log("你查询的是句子1");
+				}else{
+					for (j=0;j<dataObj.basic.explains.length;j++) {
+						$(".exp-info").append("<div>"+dataObj.basic.explains[j]+"</div>");
+					}
+				}
+				//非必
+				$(".exp-info").append("<hr/>");
+				//非必
+				if(typeof(dataObj.web) === "undefined"){
+					console.log("你查询的是句子2");
+				}else{
+					for (i=0;i<dataObj.web.length;i++) {
+						$(".web-info").append("<p>相关示意："+dataObj.web[i].key+"</p>");
+						for (ii=0;ii<dataObj.web[i].value.length;ii++) {
+							$(".web-info").append("<div>"+dataObj.web[i].value[ii]+"</div>");
+						}
+					}
+				}
+            });
+		</script>
+		
+	</body>
+</html>
