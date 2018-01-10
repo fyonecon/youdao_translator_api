@@ -25,7 +25,7 @@ PHP有道翻译后端api制作，web前端请求词源示例与js解析json结�
 #
 ####在后端修改你的互译语言，并填写密钥
 ```php
-//api例子：http://120.77.200.230/tp32app/tran/index.php?tran=ok 返回“ok”的查询json结果
+//api例子：http://xxxxxxxxxxxxxxxxxxxxxx/tran/index.php?tran=ok 返回“ok”的查询json结果
 $tran = $_GET["tran"] ;
 //$tran = "He is Good!";
 //调用翻译的规则：日文ja、英文EN、法文fr、韩文ko、简体汉语zh-CHS
@@ -54,7 +54,7 @@ translate($tran,"EN","zh-CHS");
     $(".en-tran-btn").click(function(){
         var tran_txt = $(".en-res").text();//取值
         var tran_reslt = $(".en-zh-sult");//翻译结果显示区域
-        var tran_url = "http://120.77.200.230/tp32app/tran/index.php?tran=" + tran_txt;//英译汉翻译接口
+        var tran_url = "http://xxxxxxxxxxxxxxxxxxxxxxxxxxx/tran/index.php?tran=" + tran_txt;//英译汉翻译接口
         $(".tran-sult-en").html(
             '                        <div class="tran-info-en"></div>' +
             '                        <hr />' +
