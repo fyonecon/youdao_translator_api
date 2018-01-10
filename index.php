@@ -35,7 +35,7 @@ function limitReload($max_reloadtime){//单位s
 		if($time_passed - $_SESSION["session_start"] > $max_reloadtime){//正常刷新
 
 			//【3/3】翻译源，get方法，可以查询单词或者整句，并返回json结果集
-			//api例子：http://120.77.200.230/tp32app/tran/index.php?tran=ok 返回“ok”的查询json结果
+			//api例子：http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/tran/index.php?tran=ok 返回“ok”的查询json结果
 			$tran = $_GET["tran"] ;
 			//$tran = "He is Good!";
 			//调用翻译的规则：日文ja、英文EN、法文fr、韩文ko、简体汉语zh-CHS
